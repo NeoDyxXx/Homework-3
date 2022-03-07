@@ -1,12 +1,15 @@
 def main():
-    shopping_list = set()
+    shopping_list = list()
 
     while True:
         purchase = input("Add purchase: ")
         if not purchase:
             break
 
-        shopping_list.add(purchase)
+        if purchase in shopping_list:
+            shopping_list.remove(purchase)
+        else:
+            shopping_list.append(purchase)
 
     print('----------------------------------------')
     for purchase in shopping_list:

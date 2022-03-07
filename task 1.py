@@ -10,7 +10,8 @@ def print_cat(message: str):
 
 
 def main():
-    print_cat("Hello")
+    text = input("Print text: ")
+    print_cat(text)
 
 
 if __name__ == '__main__':

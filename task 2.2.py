@@ -9,6 +9,8 @@ class ShoppingList:
             self.list[purchase] = 1
 
     def print_list(self):
+        self.delete_largest_count_purchase()
+
         print('----------------------------------------')
         for purchase, value in self.list.items():
             print("{0}: {1}".format(purchase, value))
@@ -20,6 +22,8 @@ class ShoppingList:
                 return True
         return False
 
+    def delete_largest_count_purchase(self):
+        del self.list[ sorted(self.list.items(), key=lambda item: item, reverse=True)[0][0] ]
 
 def main():
     shopping_list = ShoppingList()
